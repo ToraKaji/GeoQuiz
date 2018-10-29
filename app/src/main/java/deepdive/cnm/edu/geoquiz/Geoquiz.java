@@ -73,13 +73,15 @@ public class Geoquiz extends AppCompatActivity {
 
   private void checkAnswer(boolean userPressedTrue) {
     boolean answerIsTrue = mQuestionBank[mCurrentIndex].isAnswerTrue();
-
+    Vibrator v = (Vibrator) getSystemService(VIBRATOR_SERVICE);
     int messageResID = 0;
 
     if (userPressedTrue == answerIsTrue){
       messageResID = R.string.correct_toast;
+      v.cancel();
     }else{
       messageResID = R.string.incorrect_toast;
+      v.vibrate(9000);
     }
     Toast.makeText(this, messageResID, Toast.LENGTH_SHORT).show();
   }
