@@ -81,7 +81,7 @@ public class Geoquiz extends AppCompatActivity {
       v.cancel();
     }else{
       messageResID = R.string.incorrect_toast;
-      v.vibrate(9000);
+      v.vibrate(2000);
     }
     Toast.makeText(this, messageResID, Toast.LENGTH_SHORT).show();
   }
